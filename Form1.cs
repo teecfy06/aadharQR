@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Xml;
 using ZXing;
 using ZXing.QrCode;
-using ZXing.Windows.Compatibility; // This is the key for the error you saw
+using ZXing.Windows.Compatibility; 
 
 namespace aadharQR
 {
@@ -19,7 +19,7 @@ namespace aadharQR
 
         public Form1()
         {
-            // Initialize components to avoid the "Non-nullable field" warnings
+            
             InitializeCustomComponents();
 
             this.Text = "Aadhaar QR Reader";
@@ -67,7 +67,7 @@ namespace aadharQR
                     Bitmap bitmap = new Bitmap(ofd.FileName);
                     picQR.Image = bitmap;
 
-                    // FIX for the BarcodeReader<T> Error:
+                   
                     var reader = new BarcodeReader();
                     var result = reader.Decode(bitmap);
 
